@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Diamondsurfboards</title>
+  <title>Diamond Surfboards | Crafted in San Diego by Justin North</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+				<div class="row">
+				<div class="col-md-12 text-right">Social | Login</div><!-- end md 12 -->
+				</div><!-- end row -->
+
+				<div class="row">
+				<div class="col-md-3 text-left"><%= link_to image_tag("https://s3.amazonaws.com/diamondsurfboards/images/diamondlogo.png", class: "img-responsive"), root_path %>
+     				</div><!-- end md 3 -->
+     				<div class="col-md-9"></div>
+				</div><!-- end row -->
+
+				<div class="row">
+							<div class="col-md-12 text-right"> <%= link_to "DIAMOND", pages_diamond_path %> | SURFBOARDS | VOLUME CALCULATOR | GEAR | CONTACT</div><!-- end md 4 -->
+				</div>
+
+				<div class="row">
+				<div class="col-md-12">	<%= yield %></div><!-- end md 12 -->
+				</div><!-- end row -->
+
+						<div class="row">
+				<div class="col-md-12 text-center">&copy;  Made in Encinitas, CA. 2015 Diamond Surfboards. A Nalu Media Project. </div><!-- end md 12 -->
+				</div><!-- end row -->
+
+
+			
+
+
+
+</div><!-- end container --> 
+
 
 </body>
 </html>

@@ -1,2 +1,40 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+
+<div class="row">
+        <!-- Carousel -->
+          <div id="homeslider" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+      <!--     <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol> -->
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+              <div class="item active" align="center">
+                 <%= image_tag("https://s3.amazonaws.com/ballast/images/mikeb.jpg") %>
+              </div>
+              <div class="item" align="center">
+                  <%= image_tag("https://s3.amazonaws.com/ballast/images/mikefin.jpg")  %>
+              </div>
+              <div class="item" align="center">
+                  <%= image_tag("https://s3.amazonaws.com/ballast/images/ericslide.jpg")  %>
+              </div>
+          </div>
+          <!-- Controls -->
+          <!-- <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+             <i class="fa fa-chevron-left"></i>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+              <i class="fa fa-chevron-right"></i>
+          </a> -->
+
+        </div><!-- /carousel -->
+  </div><!-- end row -->
+
+  <div class="row">
+<div class="col-md-12 text-center">Blog Content</div><!-- end md 4 -->
+</div><!-- end row -->
+  <div class="row">
+<div class="col-md-12 text-center">Pics or Video Content</div><!-- end md 4 -->
+</div><!-- end row -->
