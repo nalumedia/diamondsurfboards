@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :contacts
+
+  devise_for :users
   get 'pages/home'
   get 'pages/diamond'
   root 'pages#home'
