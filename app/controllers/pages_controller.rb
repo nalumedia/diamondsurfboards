@@ -3,4 +3,6 @@ class PagesController < ApplicationController
   end
    def diamond
   end
+  def showusers
+  end
 end

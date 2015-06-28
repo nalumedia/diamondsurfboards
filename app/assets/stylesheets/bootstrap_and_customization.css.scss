@@ -14,31 +14,65 @@
 
 
 body {
-  background: url('https://s3.amazonaws.com/diamondsurfboards/images/diamondtnsp.png');
+  background: url('https://s3.amazonaws.com/diamondsurfboards/images/website_bg.png');
   /* full page bg recipe */
-  background-size: cover;
+  /* background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; */
+  font-family: 'PT Sans', sans-serif;
+
 }
 
 .container {
 	width: auto;
-	margin-left: 200px;
-	margin-right: 200px;
-	background: rgba(255, 255, 255, .9);
+	margin-left: 2%;
+	margin-right: 2%;
+	background: rgba(255, 255, 255, .5);
 }
 
 a:link {
-	color: #EA0012;
+	 color: #3EE7FF;
 }
 
 a:visited {
-	color: #EA0012;
+  color: #3EE7FF;
+  
 }
 
 a:hover {
-		color: #000000;
+		color: #0F3A40;
 		text-decoration: none;
 		transition: color 0.3s ease-in;
 
 	}
+
+#loggedin {
+  padding-bottom: 10px;
+}
+
+#header {
+      padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+#headernav {
+  vertical-align: center;
+  font-size: 16px;
+}
+
+#spacer {
+  padding-top: 1px;
+  background-color: #000000;
+}
+
+#footernav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+  #footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 8px;
+  }

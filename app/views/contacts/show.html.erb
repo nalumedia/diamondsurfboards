@@ -1,42 +1,54 @@
 <p id="notice"><%= notice %></p>
 
-<% if user_signed_in? %>
+<div class="row">
+<div class="col-md-12 text-center">
 
-<p>
-  <strong>Contact name:</strong>
-  <%= @contact.contact_name %>
-</p>
+              <% if user_signed_in? %>
+              <p>
+                <strong>Contact name:</strong>
+                <%= @contact.contact_name %>
+              </p>
 
-<p>
-  <strong>Contact email:</strong>
-  <%= @contact.contact_email %>
-</p>
+              <p>
+                <strong>Contact email:</strong>
+                <%= @contact.contact_email %>
+              </p>
 
-<p>
-  <strong>Contact phone:</strong>
-  <%= @contact.contact_phone %>
-</p>
+              <p>
+                <strong>Contact phone:</strong>
+                <%= @contact.contact_phone %>
+              </p>
 
-<p>
-  <strong>Contact help:</strong>
-  <%= @contact.contact_help %>
-</p>
+              <p>
+                <strong>Contact help:</strong>
+                <%= @contact.contact_help %>
+              </p>
 
-<p>
-  <strong>Contact notes:</strong>
-  <%= @contact.contact_notes %>
-</p>
+              <p>
+                <strong>Contact notes:</strong>
+                <%= @contact.contact_notes %>
+              </p>
 
-<p>
-  <strong>Contact status:</strong>
-  <%= @contact.contact_status %>
-</p>
+              <p>
+                <strong>Contact status:</strong>
+                <%= @contact.contact_status %>
+              </p>
 
 
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+              <%= link_to 'Edit', edit_contact_path(@contact) %> |
+              <%= link_to 'Back', contacts_path %>
 
 <% else %> 
-Thanks for contacting Diamond.
+<h4>Thanks for contacting Diamond.</h4>
+<%= link_to "Go Back Home", root_path %>
+
+<br /><br />
 <% end %> 
+
+
+
+</div><!-- end md 4 -->
+
+</div><!-- end row -->
+

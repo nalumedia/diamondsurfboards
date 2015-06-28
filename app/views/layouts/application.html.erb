@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -13,30 +14,44 @@
 	   
 
 <div class="container">
-				<div class="row">
-				<div class="col-md-12 text-right"><%= link_to "https://www.facebook.com/people/Diamond-Surfboards/100002396383191", target: "blank" do %><i class="fa fa-facebook"></i><% end %> | 
-				          <% if user_signed_in? %>
-				          <%= link_to current_user.email, edit_user_registration_path %>
-<%= link_to destroy_user_session_path, method: :delete do %>
-<i class="fa fa-sign-out"></i> &nbsp;  Logout   &nbsp; 
-								             <% end %>
-<% else %>
-<%=  link_to new_user_session_path do %>
-<i class="fa fa-sign-in"></i> &nbsp; Sign In <% end %> &nbsp; 
-<% end %>
+				
 
-				</div><!-- end md 12 -->
-				</div><!-- end row -->
+				<div class="row" id="header">
 
 				<div class="row">
+<div class="col-md-12 text-right" id="loggedin">
+				<% if user_signed_in? %>
+								<%= link_to current_user.email, edit_user_registration_path %> &nbsp; &nbsp; &nbsp;
+								<%= link_to destroy_user_session_path, method: :delete do %>
+								<i class="fa fa-sign-out"></i> Logout   &nbsp; &nbsp; 
+																             <% end %>
+				<% end %>
+</div><!-- end md 4 -->
+</div><!-- end row -->
+
 				<div class="col-md-3 text-left"><%= link_to image_tag("https://s3.amazonaws.com/diamondsurfboards/images/diamondlogo.png", class: "img-responsive"), root_path %>
      				</div><!-- end md 3 -->
-     				<div class="col-md-9"></div>
-				</div><!-- end row -->
+     				<div class="col-md-9 text-right" id="headernav">
+     						<%= link_to "DIAMOND", pages_diamond_path %> &nbsp; &nbsp; &nbsp;  <%= link_to "SURFBOARDS", boards_path %> &nbsp; &nbsp; &nbsp;  VOLUME CALCULATOR &nbsp; &nbsp; &nbsp; GEAR &nbsp; &nbsp; 
 
-				<div class="row">
-							<div class="col-md-12 text-right"> <%= link_to "DIAMOND", pages_diamond_path %> | SURFBOARDS | VOLUME CALCULATOR | GEAR | <%= link_to "CONTACT", new_contact_path %></div><!-- end md 4 -->
-				</div>
+  
+     				
+     						<!-- sign in --> 
+     						<% if user_signed_in? %>
+				          
+								<% else %>
+								<%=  link_to new_user_session_path do %>
+								<i class="fa fa-user fa-2x"></i> &nbsp; &nbsp;  <% end %>
+								<% end %>
+     						<!-- end sign in -->
+     								<%= link_to new_contact_path do %><i class="fa fa-envelope fa-2x"></i> <% end %> &nbsp; &nbsp; 
+
+     						
+     						<%= link_to "https://www.facebook.com/people/Diamond-Surfboards/100002396383191", target: "blank" do %><i class="fa fa-facebook fa-2x"></i><% end %> 
+				          
+
+     				</div>
+				</div><!-- end row -->
 
 				<div class="row">
 				<div class="col-md-12">	
@@ -46,12 +61,15 @@
 					<%= yield %></div><!-- end md 12 -->
 				</div><!-- end row -->
 		<div class="row">
-				<div class="col-md-12 text-center">
-					<% if user_signed_in? %><%= link_to "contacts", contacts_path %> <% end %>
+
+
+				<div class="col-md-12 text-center" id="footernav">
+					<% if user_signed_in? %><%= link_to "contacts", contacts_path %> &nbsp; &nbsp; &nbsp; 
+					<%= link_to "users", pages_showusers_path %> <% end %>
 				</div><!-- end md 12 -->
 				</div><!-- end row -->
 						<div class="row">
-				<div class="col-md-12 text-center">&copy;  Made in Encinitas, CA. 2015 Diamond Surfboards. A Nalu Media Project. </div><!-- end md 12 -->
+				<div class="col-md-12 text-center" id="footer">&copy;  Made in Encinitas, CA. 2015 Diamond Surfboards. A <a href="http://www.nalumedia.com" target="new">Nalu Media</a> Project. </div><!-- end md 12 -->
 				</div><!-- end row -->
 
 

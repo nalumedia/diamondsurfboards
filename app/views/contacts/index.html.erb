@@ -1,15 +1,15 @@
-<h1>Listing contacts</h1>
-
-<table>
+<h1>Contacts (<%= Contact.count %>)</h1>
+<%= link_to 'Create a New Contact', new_contact_path, class: "btn btn-default" %>
+<table class="table table-responsive table-hover">
   <thead>
     <tr>
-      <th>Contact name</th>
-      <th>Contact email</th>
-      <th>Contact phone</th>
-      <th>Contact help</th>
-      <th>Contact notes</th>
-      <th>Contact status</th>
-      <th>—no-stylesheets</th>
+      <th>Created</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>How we can help</th>
+      <th>Notes</th>
+      <th>Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,6 +17,7 @@
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
+        <td><%= contact.created_at.to_formatted_s(:short) %></td>
         <td><%= contact.contact_name %></td>
         <td><%= contact.contact_email %></td>
         <td><%= contact.contact_phone %></td>
@@ -34,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Contact', new_contact_path %>
+

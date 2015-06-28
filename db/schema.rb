@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608041936) do
+ActiveRecord::Schema.define(version: 20150628152638) do
+
+  create_table "boards", force: true do |t|
+    t.string   "board_name"
+    t.text     "board_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "contacts", force: true do |t|
     t.string   "contact_name"

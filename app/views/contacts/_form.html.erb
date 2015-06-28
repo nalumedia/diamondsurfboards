@@ -11,31 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :contact_name %><br>
-    <%= f.text_field :contact_name %>
+  <div class="form-group">
+    <%= f.text_field :contact_name, class: "form-control", :placeholder => "Your Name" %>
   </div>
-  <div class="field">
-    <%= f.label :contact_email %><br>
-    <%= f.text_field :contact_email %>
+  <div class="form group">
+    <%= f.text_field :contact_email, class: "form-control", :placeholder => "Your Email" %>
   </div>
-  <div class="field">
-    <%= f.label :contact_phone %><br>
-    <%= f.text_field :contact_phone %>
+  <br />
+  <div class="form-group">
+    <%= f.text_field :contact_phone, class: "form-control", :placeholder => "Your Phone" %>
   </div>
-  <div class="field">
-    <%= f.label :contact_help %><br>
-    <%= f.text_area :contact_help %>
+  <div class="form-group">
+    <%= f.text_area :contact_help, class: "form-control", :placeholder => "How can we help?" %>
   </div>
  
   <% if user_signed_in? %>
-   <div class="field">
+   <div class="form-group">
     <%= f.label :contact_notes %><br>
-    <%= f.text_area :contact_notes %>
+    <%= f.text_area :contact_notes, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :contact_status %><br>
-   <%= f.select "contact_status", ['Active', 'On Hold', 'Archived', 'Invoice Sent'] %>
+   <%= f.select "contact_status", ['New', 'Needs Something', 'Contacted'] %>
   </div>
    <% end %>
   <div class="actions">
