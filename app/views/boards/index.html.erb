@@ -2,7 +2,7 @@
 <div class="row">
 <div class="col-md-12" id="spacer"></div><!-- end md 4 -->
 </div><!-- end row -->
-
+<br />
 
 <% if user_signed_in? %>
 <%= link_to 'Add a New Board', new_board_path %> <br /> <br />
@@ -10,10 +10,10 @@
     <% @boards.each do |board| %>
 <div class="row">
 <div class="col-md-12 text-center">
-  <%= image_tag board.image.url(:medium) %></div><!-- end md 4 -->
+  <%= link_to image_tag(board.image.url(:medium)), board %></div><!-- end md 4 -->
 </div><!-- end row -->
 <div class="row">
-<div class="col-md-12 text-center"><%= link_to board.board_name, board %></div><!-- end md 4 -->
+<div class="col-md-12 text-center"><h4><%= link_to board.board_name, board %></h4></div><!-- end md 4 -->
 </div><!-- end row -->
 <div class="row">
 <div class="col-md-12 text-center">
