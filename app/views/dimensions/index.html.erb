@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Board</th>
       <th>Length</th>
       <th>Width</th>
       <th>Thickness</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @dimensions.each do |dimension| %>
       <tr>
+        <td><%= dimension.board.try(:board_name) %></td>
         <td><%= dimension.length %></td>
         <td><%= dimension.width %></td>
         <td><%= dimension.thickness %></td>

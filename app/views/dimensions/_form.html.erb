@@ -1,3 +1,5 @@
+
+
 <%= form_for(@dimension) do |f| %>
   <% if @dimension.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +13,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :length %><br>
-    <%= f.text_field :length %>
+       <div class="form-group">
+    <%= f.label "length (inches)" %><br>
+    <%= f.text_field :length, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :width %><br>
-    <%= f.text_field :width %>
+      <div class="form-group">
+    <%= f.label "width (inches)" %><br>
+    <%= f.text_field :width, class: "form-control"  %>
   </div>
-  <div class="field">
-    <%= f.label :thickness %><br>
-    <%= f.text_field :thickness %>
+      <div class="form-group">
+    <%= f.label "thickness (inches)" %><br>
+    <%= f.text_field :thickness, class: "form-control"  %>
   </div>
-  <div class="field">
-    <%= f.label :board_id %><br>
-    <%= f.number_field :board_id %>
+
+      <div class="form-group">
+<%= f.label :board_id %><br />
+    <%= collection_select(:dimension, :board_id, @boards, :id, :board_name, {:prompt => false}) %> 
   </div>
-  <div class="field">
-    <%= f.label :volume %><br>
-    <%= f.text_field :volume %>
+  
+
+ 
+      <div class="form-group">
+    <%= f.label "volume (litres)" %><br>
+    <%= f.text_field :volume, class: "form-control"  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Dimension", class: "btn btn-default" %>
   </div>
 <% end %>

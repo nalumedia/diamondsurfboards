@@ -5,7 +5,7 @@
 <br />
 
 <% if user_signed_in? %>
-<%= link_to 'Add a New Board', new_board_path %> <br /> <br />
+<%= link_to 'Add a New Board', new_board_path, class: "btn btn-default" %> <br /> <br />
 <% end %>
     <% @boards.each do |board| %>
 <div class="row">

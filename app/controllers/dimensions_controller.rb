@@ -5,6 +5,7 @@ class DimensionsController < ApplicationController
 
   def index
     @dimensions = Dimension.all
+    @boards = Board.all
     respond_with(@dimensions)
   end
 
@@ -14,10 +15,12 @@ class DimensionsController < ApplicationController
 
   def new
     @dimension = Dimension.new
+    @boards = Board.all
     respond_with(@dimension)
   end
 
   def edit
+      @boards = Board.all
   end
 
   def create

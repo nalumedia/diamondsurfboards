@@ -48,7 +48,7 @@
      								<%= link_to new_contact_path do %><i class="fa fa-envelope fa-2x"></i> <% end %> &nbsp; &nbsp; 
 
      						
-     						<%= link_to "https://www.facebook.com/people/Diamond-Surfboards/100002396383191", target: "blank" do %><i class="fa fa-facebook fa-2x"></i><% end %> 
+     						
 				          
 
      				</div>
@@ -61,16 +61,22 @@
 <% end %>
 					<%= yield %></div><!-- end md 12 -->
 				</div><!-- end row -->
+		
+<br /><br />
 		<div class="row">
-
-
 				<div class="col-md-12 text-center" id="footernav">
-					<% if user_signed_in? %><%= link_to "contacts", contacts_path %> &nbsp; &nbsp; &nbsp; 
-					<%= link_to "users", pages_showusers_path %> <% end %>
+					<% if user_signed_in? %>
+							<%= link_to "contacts", contacts_path %> &nbsp; &nbsp; &nbsp; 
+							<%= link_to "dimensions", dimensions_path %> &nbsp; &nbsp; &nbsp; 
+							<%= link_to "users", pages_showusers_path %> &nbsp; &nbsp; &nbsp; 
+							<br />
+					<% end %>
+					<br />
+					<%= link_to "https://www.facebook.com/people/Diamond-Surfboards/100002396383191", target: "blank" do %><i class="fa fa-facebook fa-2x"></i><% end %> 
 				</div><!-- end md 12 -->
 				</div><!-- end row -->
-						<div class="row">
-				<div class="col-md-12 text-center" id="footer">&copy;  Made in Encinitas, CA. 2015 Diamond Surfboards. A <a href="http://www.nalumedia.com" target="new">Nalu Media</a> Project. </div><!-- end md 12 -->
+						<div class="row" id="footernav">
+				<div class="col-md-12 text-center" id="footer"><i class="fa fa-flag"></i> &nbsp; MADE IN OCEANSIDE, CA. &copy; 2015 DIAMOND SURFBOARDS. A <a href="http://www.nalumedia.com" target="new">NALU MEDIA</a> PROJECT. </div><!-- end md 12 -->
 				</div><!-- end row -->
 
 
