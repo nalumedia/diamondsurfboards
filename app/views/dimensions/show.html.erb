@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @dimension.length %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @dimension.width %>
+</p>
+
+<p>
+  <strong>Thickness:</strong>
+  <%= @dimension.thickness %>
+</p>
+
+<p>
+  <strong>Board:</strong>
+  <%= @dimension.board_id %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @dimension.volume %>
+</p>
+
+<%= link_to 'Edit', edit_dimension_path(@dimension) %> |
+<%= link_to 'Back', dimensions_path %>

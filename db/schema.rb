@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628152638) do
+ActiveRecord::Schema.define(version: 20150629052242) do
 
   create_table "boards", force: true do |t|
     t.string   "board_name"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20150628152638) do
     t.text     "contact_help"
     t.text     "contact_notes"
     t.string   "contact_status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dimensions", force: true do |t|
+    t.string   "length"
+    t.string   "width"
+    t.string   "thickness"
+    t.integer  "board_id"
+    t.string   "volume"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

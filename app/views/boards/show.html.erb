@@ -1,14 +1,112 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Board name:</strong>
-  <%= @board.board_name %>
-</p>
 
-<p>
-  <strong>Board description:</strong>
-  <%= @board.board_description %>
-</p>
-
+<h1><%= @board.board_name %></h1>
 <%= link_to 'Edit', edit_board_path(@board) %> |
 <%= link_to 'Back', boards_path %>
+
+<div class="row">
+<div class="col-md-4">
+
+<%= image_tag @board.image.url(:medium), class: "img-responsive" %>
+
+</div><!-- end md 4 -->
+<div class="col-md-1"></div><!-- end md 4 -->
+<div class="col-md-7">
+
+<%= @board.board_description %> <hr />
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Length</th>
+      <th>Width</th>
+      <th>Thickness</th>
+      <th>Board</th>
+      <th>Volume</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @board.dimensions.each do |dimension| %>
+      <tr>
+        <td><%= dimension.length %></td>
+        <td><%= dimension.width %></td>
+        <td><%= dimension.thickness %></td>
+        <td><%= dimension.board_id %></td>
+        <td><%= dimension.volume %></td>
+        <td><%= link_to 'Show', dimension %></td>
+        <td><%= link_to 'Edit', edit_dimension_path(dimension) %></td>
+        <td><%= link_to 'Destroy', dimension, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div><!-- end md 4 -->
+</div><!-- end row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+
+<div class="row">
+<div class="col-md-4">
+
+<%= form_for(@dimension) do |f| %>
+  <% if @dimension.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dimension.errors.count, "error") %> prohibited this dimension from being saved:</h2>
+
+      <ul>
+      <% @dimension.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label "length (inches)" %><br>
+    <%= f.text_field :length, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "width (inches)" %><br>
+    <%= f.text_field :width, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :thickness %><br>
+    <%= f.text_field :thickness, class: "form-control" %>
+  </div>
+   <%= f.hidden_field :board_id, :value => @board.id %>
+ 
+  <div class="form-group">
+    <%= f.label :volume %><br>
+    <%= f.text_field :volume, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Add Dimension", class: "btn btn-default" %>
+  </div>
+<% end %>
+
+
+</div><!-- end md 4 -->
+<div class="col-md-4"></div><!-- end md 4 -->
+<div class="col-md-4"></div><!-- end md 4 -->
+</div><!-- end row -->
+
+
+

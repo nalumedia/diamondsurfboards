@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :dimensions
+
   resources :boards
 
   resources :contacts
