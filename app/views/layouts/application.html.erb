@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Diamond Surfboards | Crafted in San Diego by Justin North</title>
+  <meta name="description" content="Welcome to the Diamond Surfboards website. Diamond Surfboards are hand shaped by Justin North in Oceanside, California. Visit this site to learn more about Diamond Surfboards shapes, dimensions, and how you can order a board online.">
+  <meta name="keywords" content="Diamond Surfboards, surfboards, surf, shortboard, shaper, oceanside, waves, living, fun">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,78 +16,72 @@
 	   
 
 <div class="container">
-				
+				<div class="row">
+									<div class="col-md-12 text-right" id="loggedin">
+									<% if user_signed_in? %>
+											<%= link_to current_user.email, edit_user_registration_path %> &nbsp; &nbsp; &nbsp;
+											<%= link_to destroy_user_session_path, method: :delete do %>
+													<i class="fa fa-sign-out"></i> Logout   &nbsp; &nbsp; 
+											<% end %>
+									<% end %>
+									</div><!-- end md 12 -->
+						</div><!-- end row -->
 
 				<div class="row" id="header">
-
-				<div class="row">
-<div class="col-md-12 text-right" id="loggedin">
-				<% if user_signed_in? %>
-								<%= link_to current_user.email, edit_user_registration_path %> &nbsp; &nbsp; &nbsp;
-								<%= link_to destroy_user_session_path, method: :delete do %>
-								<i class="fa fa-sign-out"></i> Logout   &nbsp; &nbsp; 
-																             <% end %>
-				<% end %>
-</div><!-- end md 4 -->
-</div><!-- end row -->
-
-				<div class="col-md-3 text-left"><%= link_to image_tag("https://s3.amazonaws.com/diamondsurfboards/images/diamondlogo.png", class: "img-responsive"), root_path %>
-     				</div><!-- end md 3 -->
+						<div class="col-md-3 text-left">
+							<%= link_to image_tag("https://s3.amazonaws.com/diamondsurfboards/images/diamondlogo.png", class: "img-responsive"), root_path %>
+		     		</div><!-- end md 3 -->
      				<div class="col-md-9 text-right" id="headernav">
-     						<%= link_to "DIAMOND", pages_diamond_path %> &nbsp; &nbsp; &nbsp;  <%= link_to "SURFBOARDS", boards_path %> &nbsp; &nbsp; &nbsp;  
+     						<%= link_to "ABOUT", pages_diamond_path %> &nbsp; &nbsp; &nbsp;  <%= link_to "SURFBOARDS", boards_path %> &nbsp; &nbsp; &nbsp;  
      						<!-- VOLUME CALCULATOR &nbsp; &nbsp; &nbsp; GEAR &nbsp; &nbsp; -->
-
-  
-     				
      						<!-- sign in --> 
      						<% if user_signed_in? %>
-				          
 								<% else %>
 								<%=  link_to new_user_session_path do %>
 								<i class="fa fa-user fa-2x"></i> &nbsp; &nbsp;  <% end %>
 								<% end %>
      						<!-- end sign in -->
      								<%= link_to new_contact_path do %><i class="fa fa-envelope fa-2x"></i> <% end %> &nbsp; &nbsp; 
-
-     						
-     						
-				          
-
      				</div>
 				</div><!-- end row -->
 
 				<div class="row">
-				<div class="col-md-12">	
-					<% flash.each do |name, msg| %>
-     <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-<% end %>
-					<%= yield %></div><!-- end md 12 -->
+						<div class="col-md-12">	
+								<% flash.each do |name, msg| %>
+			     			<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+								<% end %>
+								<%= yield %>
+						</div><!-- end md 12 -->
 				</div><!-- end row -->
 		
 <br /><br />
 		<div class="row">
-				<div class="col-md-12 text-center" id="footernav">
-					<% if user_signed_in? %>
-							<%= link_to "contacts", contacts_path %> &nbsp; &nbsp; &nbsp; 
-							<%= link_to "dimensions", dimensions_path %> &nbsp; &nbsp; &nbsp; 
-							<%= link_to "users", pages_showusers_path %> &nbsp; &nbsp; &nbsp; 
-							<br />
-					<% end %>
-					<br />
-					<%= link_to "https://www.facebook.com/people/Diamond-Surfboards/100002396383191", target: "blank" do %><i class="fa fa-facebook fa-2x"></i><% end %> 
-				</div><!-- end md 12 -->
-				</div><!-- end row -->
-						<div class="row" id="footernav">
-				<div class="col-md-12 text-center" id="footer"><i class="fa fa-flag"></i> &nbsp; MADE IN OCEANSIDE, CA. &copy; 2015 DIAMOND SURFBOARDS. A <a href="http://www.nalumedia.com" target="new">NALU MEDIA</a> PROJECT. </div><!-- end md 12 -->
-				</div><!-- end row -->
-
-
-			
-
-
-
+					<div class="col-md-12 text-center" id="footernav">
+								<% if user_signed_in? %>
+										<%= link_to "contacts", contacts_path %> &nbsp; &nbsp; &nbsp; 
+										<%= link_to "dimensions", dimensions_path %> &nbsp; &nbsp; &nbsp; 
+										<%= link_to "users", pages_showusers_path %> &nbsp; &nbsp; &nbsp; 
+										<br />
+								<% end %>
+								<br />
+								<%= link_to "https://www.facebook.com/people/Diamond-Surfboards/100002396383191", target: "blank" do %><i class="fa fa-facebook fa-2x"></i><% end %> 
+					</div><!-- end md 12 -->
+		</div><!-- end row -->
+		<div class="row" id="footernav">
+							<div class="col-md-12 text-center" id="footer"><i class="fa fa-flag"></i> &nbsp; MADE IN OCEANSIDE, CA. &copy; 2015 DIAMOND SURFBOARDS. A <a href="http://www.nalumedia.com" target="new">NALU MEDIA</a> PROJECT. 
+							</div><!-- end md 12 -->
+		</div><!-- end row -->
 </div><!-- end container --> 
+<!-- analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-
+  ga('create', 'UA-64640980-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- end analytics -->
 </body>
 </html>
