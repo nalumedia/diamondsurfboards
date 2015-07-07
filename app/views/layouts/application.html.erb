@@ -23,7 +23,14 @@
 											<%= link_to destroy_user_session_path, method: :delete do %>
 													<i class="fa fa-sign-out"></i> Logout   &nbsp; &nbsp; 
 											<% end %>
+											<% else %>
+											<%=  link_to new_user_session_path do %>
+								<i class="fa fa-user"></i> &nbsp; &nbsp;  <% end %>
 									<% end %>
+
+
+
+
 									</div><!-- end md 12 -->
 						</div><!-- end row -->
 
@@ -32,16 +39,11 @@
 							<%= link_to image_tag("https://s3.amazonaws.com/diamondsurfboards/images/diamondlogo.png", class: "img-responsive"), root_path %>
 		     		</div><!-- end md 3 -->
      				<div class="col-md-9 text-right" id="headernav">
-     						<%= link_to "ABOUT", pages_diamond_path %> &nbsp; &nbsp; &nbsp;  <%= link_to "SURFBOARDS", boards_path %> &nbsp; &nbsp; &nbsp;  
+     					<!-- 	<%= link_to "ABOUT", pages_diamond_path %> &nbsp; &nbsp; &nbsp;  --> <%= link_to "SURFBOARDS", boards_path %> &nbsp; &nbsp; &nbsp;  
      						<!-- VOLUME CALCULATOR &nbsp; &nbsp; &nbsp; GEAR &nbsp; &nbsp; -->
      						<!-- sign in --> 
-     						<% if user_signed_in? %>
-								<% else %>
-								<%=  link_to new_user_session_path do %>
-								<i class="fa fa-user fa-2x"></i> &nbsp; &nbsp;  <% end %>
-								<% end %>
-     						<!-- end sign in -->
-     								<%= link_to new_contact_path do %><i class="fa fa-envelope fa-2x"></i> <% end %> &nbsp; &nbsp; 
+     						
+     								<%= link_to "CONTACT", new_contact_path %> &nbsp; &nbsp; 
      				</div>
 				</div><!-- end row -->
 
