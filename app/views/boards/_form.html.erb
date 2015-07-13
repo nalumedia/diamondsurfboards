@@ -24,6 +24,22 @@
     <%= f.label :image %>
     <%= f.file_field :image, class: "form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label "Board Logo" %>
+    <%= f.file_field :logo, class: "form-control" %>
+  </div>
+    <div class="form-group">
+    <%= f.label "Wave Height" %>
+    <%= f.file_field :waveheightlogo, class: "form-control" %>
+  </div>
+      <div class="form-group">
+    <%= f.label "Rocker Logo" %>
+    <%= f.file_field :rockerlogo, class: "form-control" %>
+  </div>
+        <div class="form-group">
+    <%= f.label "Skill Logo" %>
+    <%= f.file_field :skilllogo, class: "form-control" %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Create Board", class: "btn btn-default" %>

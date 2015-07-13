@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629052242) do
+ActiveRecord::Schema.define(version: 20150709051857) do
 
   create_table "boards", force: true do |t|
     t.string   "board_name"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(version: 20150629052242) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "waveheightlogo_file_name"
+    t.string   "waveheightlogo_content_type"
+    t.integer  "waveheightlogo_file_size"
+    t.datetime "waveheightlogo_updated_at"
+    t.string   "rockerlogo_file_name"
+    t.string   "rockerlogo_content_type"
+    t.integer  "rockerlogo_file_size"
+    t.datetime "rockerlogo_updated_at"
+    t.string   "skilllogo_file_name"
+    t.string   "skilllogo_content_type"
+    t.integer  "skilllogo_file_size"
+    t.datetime "skilllogo_updated_at"
   end
 
   create_table "contacts", force: true do |t|

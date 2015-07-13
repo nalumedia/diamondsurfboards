@@ -14,7 +14,7 @@
 
 
 body {
-  background: url('https://s3.amazonaws.com/diamondsurfboards/images/website_bg.png');
+  /* background: url('https://s3.amazonaws.com/diamondsurfboards/images/website_bg.png');
   /* full page bg recipe */
   /* background-size: cover;
   background-position: center;
@@ -31,16 +31,16 @@ body {
 }
 
 a:link {
-	 color: #3EE7FF;
+	 color: #000000;
 }
 
 a:visited {
-  color: #3EE7FF;
+  color: #000000;
   
 }
 
 a:hover {
-		color: #0F3A40;
+		color: #e74c3c;
 		text-decoration: none;
 		transition: color 0.3s ease-in;
 
@@ -67,7 +67,7 @@ a:hover {
 }
 
 #footernav {
-  background-color: #1F737F;
+  /* background-color: #1F737F; */
   padding-top: 10px;
   padding-bottom: 10px;
 }

@@ -1,103 +1,75 @@
 <p id="notice"><%= notice %></p>
 
-
-
-
+<div class="row">
+        <div class="col-md-5">
+          <center>
+                  <h1><%= @board.board_name %></h1>
+                  <% if @board.image.present? %>
+                  <%= image_tag @board.image.url(:medium), class: "img-responsive" %>
+                  <% end %>
+        </div><!-- end md 4 -->
+        <div class="col-md-7">
+                    <br />
+                    <center>
+                        <% if @board.logo.present? %>
+                        <%= image_tag @board.logo.url(:medium), class: "img-responsive" %>
+                    <% end %>
+                    </center><br />
+                    <p><%= @board.board_description %></p>
+                    <center> 
+                       <% if @board.waveheightlogo.present? %>
+                       <%= image_tag @board.waveheightlogo.url(:medium), class: "img-responsive" %>
+                     <% end %>
+                     </center><br />
+                           <center>
+                            <% if @board.rockerlogo.present? %>
+                            <%= image_tag @board.rockerlogo.url(:medium), class: "img-responsive" %>
+                            <% end %>
+                            </center><br />
+                                  <center>
+                                     <% if @board.skilllogo.present? %>
+                                    <%= image_tag @board.skilllogo.url(:medium), class: "img-responsive" %>
+                                  <% end %>
+                                  </center><br />
+          </center>
+                    </div><!-- end md 4 -->
+            </div><!-- end row -->
 
 <div class="row">
-<div class="col-md-4">
-
-<%= image_tag @board.image.url(:medium), class: "img-responsive" %>
-
-</div><!-- end md 4 -->
-<div class="col-md-1"></div><!-- end md 4 -->
-<div class="col-md-7">
-<h1><%= @board.board_name %></h1>
-
-<div class="row">
-<div class="col-md-12" id="spacer"></div><!-- end md 4 -->
-</div><!-- end row -->
-<br />
-<p><%= @board.board_description %></p>
-
-
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>Length</th>
-      <th>Width</th>
-      <th>Thickness</th>
-      <th>Volume</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @board.dimensions.each do |dimension| %>
-      <tr>
-        <td><%= dimension.length %></td>
-        <td><%= dimension.width %>"</td>
-        <td><%= dimension.thickness %>"</td>
-        <td><%= dimension.volume %>L</td>
-        <td><%= link_to 'Edit', edit_dimension_path(dimension) %> &nbsp
-        <%= link_to 'Delete', dimension, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-</div><!-- end md 4 -->
+      <div class="col-md-4">
+            <table class="table table-condensed">
+                      <thead>
+                        <tr>
+                          <th>Length</th>
+                          <th>Width</th>
+                          <th>Thickness</th>
+                          <th>Volume</th>
+                          <th colspan="3"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% @board.dimensions.each do |dimension| %>
+                          <tr>
+                            <td><%= dimension.length %></td>
+                            <td><%= dimension.width %>"</td>
+                            <td><%= dimension.thickness %>"</td>
+                            <td><%= dimension.volume %>L</td>
+                            <td><%= link_to 'Edit', edit_dimension_path(dimension) %> &nbsp
+                            <%= link_to 'Delete', dimension, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+      </div><!-- end md 4 -->
+      <div class="col-md-4"></div><!-- end md 4 -->
+      <div class="col-md-4"></div><!-- end md 4 -->
 </div><!-- end row -->
 
-<hr />
 
 <%= link_to 'Edit', edit_board_path(@board) %> |
 <%= link_to 'Back', boards_path %>
 
-<div class="row">
-<div class="col-md-4">
 
-<%= form_for(@dimension) do |f| %>
-  <% if @dimension.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@dimension.errors.count, "error") %> prohibited this dimension from being saved:</h2>
-
-      <ul>
-      <% @dimension.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= f.label "length (inches)" %><br>
-    <%= f.text_field :length, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label "width (inches)" %><br>
-    <%= f.text_field :width, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label "thickness (inches)" %><br>
-    <%= f.text_field :thickness, class: "form-control" %>
-  </div>
-   <%= f.hidden_field :board_id, :value => @board.id %>
- 
-  <div class="form-group">
-    <%= f.label "volume (inches)" %><br>
-    <%= f.text_field :volume, class: "form-control" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Add Dimension", class: "btn btn-default" %>
-  </div>
-<% end %>
-
-
-</div><!-- end md 4 -->
-<div class="col-md-4"></div><!-- end md 4 -->
-<div class="col-md-4"></div><!-- end md 4 -->
-</div><!-- end row -->
 
 
 
