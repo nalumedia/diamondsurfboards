@@ -54,8 +54,11 @@
                             <td><%= dimension.width %>"</td>
                             <td><%= dimension.thickness %>"</td>
                             <td><%= dimension.volume %>L</td>
-                            <td><%= link_to 'Edit', edit_dimension_path(dimension) %> &nbsp
-                            <%= link_to 'Delete', dimension, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                            <td>
+                              <% if user_signed_in? %><%= link_to 'Edit', edit_dimension_path(dimension) %> &nbsp
+                            <%= link_to 'Delete', dimension, method: :delete, data: { confirm: 'Are you sure?' } %>
+                              <% end %>
+                          </td>
                           </tr>
                         <% end %>
                       </tbody>
@@ -65,10 +68,10 @@
       <div class="col-md-4"></div><!-- end md 4 -->
 </div><!-- end row -->
 
-
+<% if user_signed_in? %>
 <%= link_to 'Edit', edit_board_path(@board) %> |
 <%= link_to 'Back', boards_path %>
-
+<% end %>
 
 
 
