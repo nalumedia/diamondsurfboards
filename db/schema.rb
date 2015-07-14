@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709051857) do
+ActiveRecord::Schema.define(version: 20150714142138) do
 
   create_table "boards", force: true do |t|
     t.string   "board_name"
@@ -38,6 +38,10 @@ ActiveRecord::Schema.define(version: 20150709051857) do
     t.string   "skilllogo_content_type"
     t.integer  "skilllogo_file_size"
     t.datetime "skilllogo_updated_at"
+    t.string   "triimage_file_name"
+    t.string   "triimage_content_type"
+    t.integer  "triimage_file_size"
+    t.datetime "triimage_updated_at"
   end
 
   create_table "contacts", force: true do |t|

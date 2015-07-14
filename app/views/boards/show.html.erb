@@ -5,7 +5,7 @@
           <center>
                   <h1><%= @board.board_name %></h1>
                   <% if @board.image.present? %>
-                  <%= image_tag @board.image.url(:medium), class: "img-responsive" %>
+                  <%= image_tag @board.triimage.url(:medium), class: "img-responsive" %>
                   <% end %>
         </div><!-- end md 4 -->
         <div class="col-md-7">
