@@ -1,20 +1,23 @@
+<div class="row">
+<div class="col-md-2"></div><!-- end md 4 -->
+<div class="col-md-8">
+
 <p id="notice"><%= notice %></p>
 
 <div class="row">
         <div class="col-md-5">
           <center>
                   <h1><%= @board.board_name %></h1>
-                  <% if @board.image.present? %>
+                  <% if @board.triimage.present? %>
                   <%= image_tag @board.triimage.url(:medium), class: "img-responsive" %>
                   <% end %>
         </div><!-- end md 4 -->
-        <div class="col-md-7">
+        <div class="col-md-7 text-left">
                     <br />
-                    <center>
                         <% if @board.logo.present? %>
                         <%= image_tag @board.logo.url(:medium), class: "img-responsive" %>
                     <% end %>
-                    </center><br />
+                    <br />
                     <p><%= @board.board_description %></p>
                     <center> 
                        <% if @board.waveheightlogo.present? %>
@@ -72,6 +75,16 @@
 <%= link_to 'Edit', edit_board_path(@board) %> |
 <%= link_to 'Back', boards_path %>
 <% end %>
+
+
+
+
+</div><!-- end md 4 -->
+<div class="col-md-2"></div><!-- end md 4 -->
+</div><!-- end row -->
+
+
+
 
 
 
