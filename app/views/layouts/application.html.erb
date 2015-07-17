@@ -14,7 +14,6 @@
 </head>
 <body>
 	   
-
 <div class="container">
 				<div class="row">
 									<div class="col-md-12 text-right" id="loggedin">
@@ -27,13 +26,24 @@
 											<%=  link_to new_user_session_path do %>
 								<i class="fa fa-user"></i> &nbsp; &nbsp;  <% end %>
 									<% end %>
-
-
-
-
 									</div><!-- end md 12 -->
 						</div><!-- end row -->
 
+<!-- temp logo -->
+						<% if user_signed_in? %>
+						<% else %>
+						<div class="row">
+								<div class="col-md-12 text-center">
+									<center>
+										<%= link_to image_tag("https://s3.amazonaws.com/diamondsurfboards/images/diamondlogo.png", class: "img-responsive"), root_path %>
+									</center>
+								</div><!-- end md 4 -->
+						</div><!-- end row -->
+						<% end %>
+	<!-- end temp logo -->
+
+	<!-- temp sign in -->
+	<% if user_signed_in? %>
 				<div class="row" id="header">
 						<div class="col-md-3 text-left">
 							<%= link_to image_tag("https://s3.amazonaws.com/diamondsurfboards/images/diamondlogo.png", class: "img-responsive"), root_path %>
@@ -43,7 +53,6 @@
      					<!-- 	<%= link_to "ABOUT", pages_diamond_path %> &nbsp; &nbsp; &nbsp; --> <%= link_to "SURFBOARDS", boards_path %> &nbsp; &nbsp; <!--  
      						VOLUME CALCULATOR &nbsp; &nbsp; &nbsp; GEAR &nbsp; &nbsp; -->
      						<!-- sign in --> 
-     					
      								<%= link_to "CONTACT", new_contact_path %> &nbsp; &nbsp; 
      				</div>
 				</div><!-- end row -->
@@ -56,7 +65,10 @@
 								<%= yield %>
 						</div><!-- end md 12 -->
 				</div><!-- end row -->
-		
+<% end %>
+<!-- end temp row -->
+
+
 <br /><br />
 		<div class="row">
 					<div class="col-md-12 text-center" id="footernav">

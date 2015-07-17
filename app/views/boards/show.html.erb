@@ -5,8 +5,8 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-        <div class="col-md-5">
-          <center>
+        <div class="col-md-5 text-left">
+          
                   <h1><%= @board.board_name %></h1>
                   <% if @board.triimage.present? %>
                   <%= image_tag @board.triimage.url(:medium), class: "img-responsive" %>
@@ -34,12 +34,12 @@
                                     <%= image_tag @board.skilllogo.url(:medium), class: "img-responsive" %>
                                   <% end %>
                                   </center><br />
-          </center>
                     </div><!-- end md 4 -->
             </div><!-- end row -->
 
 <div class="row">
       <div class="col-md-4">
+        <h4>Stock Sizes</h4>
             <table class="table table-condensed">
                       <thead>
                         <tr>
