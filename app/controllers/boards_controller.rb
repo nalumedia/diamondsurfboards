@@ -5,12 +5,12 @@ class BoardsController < ApplicationController
   respond_to :html
 
   def index
-    @boards = Board.all
+    @boards = Board.all.order("board_name ASC")
     respond_with(@boards)
   end
 
   def show
-    @boards = Board.all
+    @boards = Board.all.order("board_name ASC")
     @dimension = Dimension.new
     respond_with(@board)
   end
