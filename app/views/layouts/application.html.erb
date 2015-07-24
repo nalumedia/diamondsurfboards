@@ -15,35 +15,12 @@
 <body>
 	   
 <div class="container">
-				<div class="row">
-									<div class="col-md-12 text-right" id="loggedin">
-									<% if user_signed_in? %>
-											<%= link_to current_user.email, edit_user_registration_path %> &nbsp; &nbsp; &nbsp;
-											<%= link_to destroy_user_session_path, method: :delete do %>
-													<i class="fa fa-sign-out"></i> Logout   &nbsp; &nbsp; 
-											<% end %>
-											<% else %>
-											<%=  link_to new_user_session_path do %>
-								<i class="fa fa-user"></i> &nbsp; &nbsp;  <% end %>
-									<% end %>
-									</div><!-- end md 12 -->
-						</div><!-- end row -->
+				
 
-<!-- temp logo -->
-						<% if user_signed_in? %>
-						<% else %>
-						<div class="row">
-								<div class="col-md-12 text-center">
-									<center>
-										<%= link_to image_tag("https://s3.amazonaws.com/diamondsurfboards/images/diamondlogo.png", class: "img-responsive"), root_path %>
-									</center>
-								</div><!-- end md 4 -->
-						</div><!-- end row -->
-						<% end %>
-	<!-- end temp logo -->
+
 
 	<!-- temp sign in -->
-	<% if user_signed_in? %>
+
 				<div class="row" id="header">
 						<div class="col-md-3 text-left">
 							<%= link_to image_tag("https://s3.amazonaws.com/diamondsurfboards/images/diamondlogo.png", class: "img-responsive"), root_path %>
@@ -62,28 +39,46 @@
 								<% flash.each do |name, msg| %>
 			     			<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
 								<% end %>
+
 								<%= yield %>
+						
 						</div><!-- end md 12 -->
 				</div><!-- end row -->
-<% end %>
+
 <!-- end temp row -->
 
-
-<br /><br />
 		<div class="row">
 					<div class="col-md-12 text-center" id="footernav">
 								<% if user_signed_in? %>
 										<%= link_to "contacts", contacts_path %> &nbsp; &nbsp; &nbsp; 
 										<%= link_to "dimensions", dimensions_path %> &nbsp; &nbsp; &nbsp; 
 										<%= link_to "users", pages_showusers_path %> &nbsp; &nbsp; &nbsp; 
-										<br />
+	
 								<% end %>
-								<br />
-								<%= link_to "https://www.facebook.com/people/Diamond-Surfboards/100002396383191", target: "blank" do %><i class="fa fa-facebook fa-2x"></i><% end %> 
+
+<div class="row">
+<div class="col-md-12 text-right" id="social">
+<%= link_to "https://www.facebook.com/people/Diamond-Surfboards/100002396383191", target: "blank" do %><i class="fa fa-facebook fa-2x"></i><% end %> 
+
+</div><!-- end md 4 -->
+
+</div><!-- end row -->
+								
 					</div><!-- end md 12 -->
 		</div><!-- end row -->
 		<div class="row" id="footernav">
 							<div class="col-md-12 text-center" id="footer"><i class="fa fa-flag"></i> &nbsp; MADE IN OCEANSIDE, CA. &copy; 2015 DIAMOND SURFBOARDS. A <a href="http://www.nalumedia.com" target="new">NALU MEDIA</a> PROJECT. 
+						
+						<% if user_signed_in? %>
+											<%= link_to current_user.email, edit_user_registration_path %> &nbsp; &nbsp; &nbsp;
+											<%= link_to destroy_user_session_path, method: :delete do %>
+													<i class="fa fa-sign-out"></i> Logout   &nbsp; &nbsp; 
+											<% end %>
+											<% else %>
+											<%=  link_to new_user_session_path do %>
+								<i class="fa fa-user"></i> &nbsp; &nbsp;  <% end %>
+									<% end %>
+
 							</div><!-- end md 12 -->
 		</div><!-- end row -->
 </div><!-- end container --> 
