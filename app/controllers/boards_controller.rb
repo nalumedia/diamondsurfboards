@@ -10,6 +10,7 @@ class BoardsController < ApplicationController
   end
 
   def show
+    @boards = Board.all
     @dimension = Dimension.new
     respond_with(@board)
   end
