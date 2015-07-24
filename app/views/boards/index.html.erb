@@ -8,26 +8,33 @@
 <%= link_to 'Add a New Board', new_board_path, class: "btn btn-default" %> <br /> <br />
 <% end %>
 
+<div class="row">
 
-    <% @boards.each do |board| %>
+					<div class="col-md-9">
+									<% @boards.each do |board| %>
+															<div class="listing">
+																		<center>
+																		<b><%= link_to board.board_name, board %></b><br />
+																					<%= link_to image_tag(board.image.url(:medium), class: "img-responsive"), board %><br />
+																									<% if user_signed_in? %>
+																				   <%= link_to 'View', board %> &nbsp; &nbsp; <%= link_to 'Edit', edit_board_path(board) %>&nbsp; &nbsp;
+																				     <%= link_to 'Delete', board, method: :delete, data: { confirm: 'Are you sure?' } %>
+																			<% end %>
+																		</center>
+															</div>
+									    <% end %>
+					</div><!-- end md 9 -->
+								<div class="col-md-3">
+					<h4>Boards</h4>
+							<% @boards.each do |board| %>
+									<b><%= link_to board.board_name, board %></b><br />
+							<% end %>
 
-<div class="listing">
-			<center>
-			<b><%= link_to board.board_name, board %></b><br />
-						<%= link_to image_tag(board.image.url(:medium)), board %><br />
-										<% if user_signed_in? %>
-					   <%= link_to 'View', board %> &nbsp; &nbsp; <%= link_to 'Edit', edit_board_path(board) %>&nbsp; &nbsp;
-					     <%= link_to 'Delete', board, method: :delete, data: { confirm: 'Are you sure?' } %>
-				<% end %>
-			</center>
-</div>
-
-				
-					
+			</div><!-- end md 3 -->
+</div><!-- end row -->
 
 
-
-    <% end %>
+    
 
 
 
