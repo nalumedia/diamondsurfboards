@@ -1,3 +1,5 @@
+<% if user_signed_in? %>
+
 <h1>Contacts (<%= Contact.count %>)</h1>
 <%= link_to 'Create a New Contact', new_contact_path, class: "btn btn-default" %>
 <table class="table table-responsive table-hover">
@@ -34,5 +36,7 @@
 </table>
 
 <br>
-
+<% else %>
+YOU DO NOT HAVE PERMISSION TO ENTER THIS AREA 
+<% end %>
 
