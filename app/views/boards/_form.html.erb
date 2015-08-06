@@ -15,6 +15,18 @@
     <%= f.label :board_name %><br>
     <%= f.text_field :board_name, class: "form-control" %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :board_description %><br>
+    <%= f.text_area :board_description, class: "form-control" %>
+  </div>
+
+
+      <div class="form-group">
+<%= f.label :type_id %><br />
+    <%= collection_select(:board, :type_id, @types, :id, :type_name, {:prompt => false}) %> 
+  </div>
+
   <div class="form-group">
     <%= f.label :board_description %><br>
     <%= f.text_area :board_description, class: "form-control" %>

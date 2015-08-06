@@ -23,6 +23,12 @@ body {
 
 }
 
+ul.products li {
+    width: 400px;
+    display: inline-block;
+    vertical-align: top;
+}
+
 .container {
 	width: auto;
 	margin-left: 0%;

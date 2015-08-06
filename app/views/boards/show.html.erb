@@ -31,6 +31,8 @@
                                 <% end %>
                                 <br />
                                 <p><%= @board.board_description %></p>
+                                <p>Category: <%= @board.category %></p>
+                                <p>Category: <%= @board.type.type_name %></p>
                                 <center> 
                                    <% if @board.waveheightlogo.present? %>
                                    <%= image_tag @board.waveheightlogo.url(:medium), class: "img-responsive" %>

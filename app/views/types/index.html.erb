@@ -1,0 +1,37 @@
+<h1>SURFBOARDS</h1>
+<div class="row">
+<div class="col-md-12" id="spacer"></div><!-- end md 4 -->
+</div><!-- end row -->
+<br />
+
+<% if user_signed_in? %>
+<%= link_to 'Add a New Board', new_board_path, class: "btn btn-default" %> &nbsp; &nbsp; <%= link_to 'Add a New Board Type', new_type_path, class: "btn btn-default" %> <br /> <br />
+<% end %>
+
+<div class="row">
+          <div class="col-md-12">
+            <% @types.each do |type| %>       
+                 <h2> <%= type.type_name %></h2>
+                  <ul class="products">
+                      <li>
+                  <% type.boards.each do |board| %>
+          
+                              <div class="listing">
+                                    <center>
+                                    <b><%= link_to board.board_name, board %></b><br />
+                                          <%= link_to image_tag(board.image.url(:medium), class: "img-responsive"), board %><br />
+                                                  <% if user_signed_in? %>
+                                           <%= link_to 'View', board %> &nbsp; &nbsp; <%= link_to 'Edit', edit_board_path(board) %>&nbsp; &nbsp;
+                                             <%= link_to 'Delete', board, method: :delete, data: { confirm: 'Are you sure?' } %>
+                                      <% end %>
+                                    </center>
+                              </div> <!-- end listing -->
+                        </li>
+                    <% end %> <!-- end board --> 
+                  </ul>
+                 
+             <% end %><!-- end types -->
+  
+          </div><!-- end md 12 -->
+                
+</div><!-- end row -->

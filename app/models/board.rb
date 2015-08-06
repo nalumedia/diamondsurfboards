@@ -7,5 +7,6 @@ class Board < ActiveRecord::Base
 	  		has_attached_file :triimage, :styles => { :medium => "483x612>", :thumb => "200x253>" }
         validates_attachment :image, content_type: { content_type: /\Aimage\/.*\Z/ }
         has_many :dimensions
+        belongs_to :type
         
 end

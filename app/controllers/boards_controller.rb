@@ -6,6 +6,7 @@ class BoardsController < ApplicationController
 
   def index
     @boards = Board.all.order("board_name ASC")
+    @types = Type.all
     respond_with(@boards)
   end
 
@@ -17,10 +18,12 @@ class BoardsController < ApplicationController
 
   def new
     @board = Board.new
+    @types = Type.all
     respond_with(@board)
   end
 
   def edit
+        @types = Type.all
   end
 
   def create
@@ -45,6 +48,6 @@ class BoardsController < ApplicationController
     end
 
     def board_params
-      params.require(:board).permit(:board_name, :board_description, :image, :triimage, :logo, :waveheightlogo, :rockerlogo, :skilllogo)
+      params.require(:board).permit(:board_name, :type_id, :category, :board_description, :image, :triimage, :logo, :waveheightlogo, :rockerlogo, :skilllogo)
     end
 end

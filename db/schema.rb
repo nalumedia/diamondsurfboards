@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714142138) do
+ActiveRecord::Schema.define(version: 20150805152137) do
 
   create_table "boards", force: true do |t|
     t.string   "board_name"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20150714142138) do
     t.string   "triimage_content_type"
     t.integer  "triimage_file_size"
     t.datetime "triimage_updated_at"
+    t.string   "category"
+    t.integer  "type_id"
   end
 
   create_table "contacts", force: true do |t|
@@ -61,6 +63,13 @@ ActiveRecord::Schema.define(version: 20150714142138) do
     t.string   "thickness"
     t.integer  "board_id"
     t.string   "volume"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "types", force: true do |t|
+    t.string   "type_name"
+    t.text     "type_description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
