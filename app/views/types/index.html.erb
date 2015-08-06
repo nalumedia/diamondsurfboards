@@ -12,6 +12,11 @@
           <div class="col-md-12">
             <% @types.each do |type| %>       
                  <h2> <%= type.type_name %></h2>
+                 <% if user_signed_in? %>
+                                           <%= link_to 'View', type %> &nbsp; &nbsp; <%= link_to 'Edit', edit_type_path(type) %>&nbsp; &nbsp;
+                                             <%= link_to 'Delete', type, method: :delete, data: { confirm: 'Are you sure?' } %>
+                                      <% end %>
+
                   <ul class="products">
                       <li>
                   <% type.boards.each do |board| %>
