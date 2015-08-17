@@ -8,8 +8,14 @@
 <%= link_to 'Add a New Board', new_board_path, class: "btn btn-default" %> <br /> <br />
 <% end %>
 
-<div class="row">
 
+<div class="row">
+  <div class="col-md-12">
+                  &nbsp; &nbsp; &nbsp; <%= link_to "> Sort By Board Type", types_path %>
+  </div>
+
+
+<div class="row">
 					<div class="col-md-12">
 									<% @boards.each do |board| %>
 															<div class="listing">
