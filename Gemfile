@@ -30,6 +30,7 @@ gem 'devise'
    gem 'paperclip', github: 'thoughtbot/paperclip'
    gem 'aws-sdk', '~> 1.20.0'
 
+gem 'letter_opener', group: :development
 
  group :development, :test do
 	       gem 'sqlite3'
