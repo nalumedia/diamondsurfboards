@@ -24,8 +24,11 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     @contact.save
+    UserMailer.welcome_email(@contact).deliver
     respond_with(@contact)
   end
+
+
 
   def update
     @contact.update(contact_params)
