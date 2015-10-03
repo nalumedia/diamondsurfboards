@@ -41,7 +41,8 @@
 								<% end %>
 
 								<%= yield %>
-						
+
+
 						</div><!-- end md 12 -->
 				</div><!-- end row -->
 
@@ -50,12 +51,10 @@
 		<div class="row">
 					<div class="col-md-12 text-center" id="footernav">
 								<% if user_signed_in? %>
-										<%= link_to "contacts", contacts_path %> &nbsp; &nbsp; &nbsp; 
-										<%= link_to "dimensions", dimensions_path %> &nbsp; &nbsp; &nbsp; 
-										<%= link_to "users", pages_showusers_path %> &nbsp; &nbsp; &nbsp; 
-	
+										<%= link_to "CONTACTS", contacts_path %> &nbsp; &nbsp; &nbsp; 
+										<%= link_to "DOMENSIONS", dimensions_path %> &nbsp; &nbsp; &nbsp; 
+										<%= link_to "USERS", pages_showusers_path %> &nbsp; &nbsp; &nbsp; 
 								<% end %>
-
 <div class="row">
 <div class="col-md-12 text-right" id="social">
 <%= link_to "https://www.facebook.com/people/Diamond-Surfboards/100002396383191", target: "blank" do %><i class="fa fa-facebook fa-2x"></i><% end %> 
@@ -67,7 +66,7 @@
 					</div><!-- end md 12 -->
 		</div><!-- end row -->
 		<div class="row" id="footernav">
-							<div class="col-md-12 text-center" id="footer"><i class="fa fa-flag"></i> &nbsp; MADE IN OCEANSIDE, CA. &copy; 2015 DIAMOND SURFBOARDS. A <a href="http://www.nalumedia.com" target="new">NALU MEDIA</a> PROJECT. 
+							<div class="col-md-12 text-center" id="footer"><i class="fa fa-flag"></i> &nbsp; Made in Oceanside, California. &copy; 2015 DIAMOND SURFBOARDS. A <a href="http://www.nalumedia.com" target="new">NALU MEDIA</a> Project. 
 						
 						<% if user_signed_in? %>
 											<%= link_to current_user.email, edit_user_registration_path %> &nbsp; &nbsp; &nbsp;
@@ -76,7 +75,7 @@
 											<% end %>
 											<% else %>
 											<%=  link_to new_user_session_path do %>
-								<i class="fa fa-user"></i> &nbsp; &nbsp;  <% end %>
+								      Login  <% end %>
 									<% end %>
 
 							</div><!-- end md 12 -->

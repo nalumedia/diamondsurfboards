@@ -8,10 +8,11 @@
 <div class="row">
 <div class="col-md-12" id="spacer"></div><!-- end md 4 -->
 </div><!-- end row -->
+<br />
 
 <div class="row">
           <div class="col-md-2">
-                        <h4>Boards</h4>
+                        <h4>Surfboards</h4>
                         <% @boards.each do |board| %>
                         <%= link_to board.board_name, board %><br />
                         <% end %>
@@ -31,19 +32,23 @@
                                 <% end %>
                                 <br />
                                 <p><%= @board.board_description %></p>
-                                <p>Board Type: <%= @board.type.type_name %></p>
+                              
                                 <center> 
+
                                    <% if @board.waveheightlogo.present? %>
+                                    <h4>WAVE</h4>
                                    <%= image_tag @board.waveheightlogo.url(:medium), class: "img-responsive" %>
                                  <% end %>
                                  </center><br />
                                        <center>
                                         <% if @board.rockerlogo.present? %>
+                                         <h4>SHAPE</h4>
                                         <%= image_tag @board.rockerlogo.url(:medium), class: "img-responsive" %>
                                         <% end %>
                                         </center><br />
                                               <center>
                                                  <% if @board.skilllogo.present? %>
+                                                  <h4>SKILL LEVEL</h4>
                                                 <%= image_tag @board.skilllogo.url(:medium), class: "img-responsive" %>
                                               <% end %>
                                               </center><br />
@@ -52,7 +57,7 @@
 
             <div class="row">
                   <div class="col-md-4">
-                    <h4>Stock Sizes</h4>
+                    <h4>STANDARD DIMENSIONS</h4>
                         <table class="table table-condensed">
                                   <thead>
                                     <tr>

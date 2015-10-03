@@ -29,6 +29,10 @@ ul.products li {
     vertical-align: top;
 }
 
+h4 {
+  font-weight: bold;
+}
+
 .container {
 	width: auto;
 	margin-left: 0%;
@@ -76,6 +80,11 @@ a:hover {
   /* background-color: #1F737F; */
   padding-top: 10px;
   padding-bottom: 0px;
+}
+
+#blueline {
+  background-color: #0451B7;
+  height: 1px;
 }
 
 #social {
