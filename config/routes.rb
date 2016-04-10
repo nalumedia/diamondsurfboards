@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
+  resources :blogs
+
   resources :types
 
   resources :dimensions

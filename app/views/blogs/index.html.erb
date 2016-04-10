@@ -1,0 +1,55 @@
+
+<% if user_signed_in? %>
+<%= link_to 'Create New Post', new_blog_path, class: "btn btn-default" %>
+<br /><br />
+<% end %>
+<!-- Section -->
+<section class="page-section">
+    <div class="container relative">
+                <div class="row masonry">
+                    <% @blogs.each do |blog| %>
+                    <!-- Post Item -->
+                    <div class="col-sm-6 col-md-4 col-lg-4 mb-60 mb-xs-40">
+                      <div class="post-prev-title font-alt">
+                        <h4><%= blog.title %></h4>
+                      </div>
+                        <div class="post-prev-img">
+                            <% if blog.image.present? %>
+                            <%= image_tag blog.image.url(:thumb) %>
+                            <% else %>
+                            <%= raw(blog.video) %>
+                            <% end %>
+                        </div>
+                        <div class="post-prev-text">
+                    <p>
+                      <%= raw(blog.body.truncate(300)) %>
+                    </p>
+                        </div>
+                        <div class="post-prev-more">
+                          <i class="fa fa-calendar-o"></i> &nbsp;
+                              <i><%= blog.created_at.to_formatted_s(:short) %></i>
+                              <% if user_signed_in? %>
+                              <br />
+                              <%= link_to 'Show', blog %>
+                              <%= link_to 'Edit', edit_blog_path(blog) %>
+                              <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+                              <% end %>
+                        </div>
+
+                    </div>
+                    <!-- End Post Item -->
+                    <% end %>
+
+
+                </div>
+
+
+
+    </div>
+</section>
+<!-- End Section -->
+
+
+<!-- Divider -->
+<hr class="mt-0 mb-0"/>
+<!-- End Divider -->

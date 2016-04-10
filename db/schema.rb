@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805152137) do
+ActiveRecord::Schema.define(version: 20160403215419) do
+
+  create_table "blogs", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "video"
+  end
 
   create_table "boards", force: true do |t|
     t.string   "board_name"
@@ -44,6 +56,20 @@ ActiveRecord::Schema.define(version: 20150805152137) do
     t.datetime "triimage_updated_at"
     t.string   "category"
     t.integer  "type_id"
+  end
+
+  create_table "bootsy_image_galleries", force: true do |t|
+    t.integer  "bootsy_resource_id"
+    t.string   "bootsy_resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bootsy_images", force: true do |t|
+    t.string   "image_file"
+    t.integer  "image_gallery_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "contacts", force: true do |t|
